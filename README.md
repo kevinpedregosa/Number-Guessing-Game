@@ -4,10 +4,10 @@
 Terminal-based Python game where players try to guess a secret number within 10 attempts.
 
 # Features 
-- 3 Different Difficulty Levels: Easy, Medium, and Hard (level determines number of hints)
+- 3 Different Difficulty Levels: Easy, Medium, and Hard (determines number of hints)
 - 4 Different Hot/Cold Feedback Responses: Shows if guess is getting closer or farther based on the absolute difference between guess and secret number
 - 4 Different Smart Hints: including even/odd, divisible by 5, prime, and fibonacci; provided in random order
-- Attempt Tracking: Reports number of attempts remaining, and hints are given after specific number of guesses (based on difficulty level)
+- Attempt Tracking: Reports number of attempts remaining, and hints are given after specific number of guesses (determined by difficulty level)
 - Quit Option: Players can exit anytime by typing q
 - Leaderboard: Stores and displays top 5 scores with username, attempts, number guessed, and difficulty
 
