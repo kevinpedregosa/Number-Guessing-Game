@@ -1,9 +1,9 @@
 # Number Guessing Game
 
-# Overview
+# Game Description
 Terminal-based Python game where players try to guess a secret number within 10 attempts.
 
-# Features 
+# Game Features 
 - 3 Different Difficulty Levels: Easy, Medium, and Hard (determines number of hints)
 - 4 Different Hot/Cold Feedback Responses: Shows if guess is getting closer or farther based on the absolute difference between guess and secret number
 - 4 Different Smart Hints: including even/odd, divisible by 5, prime, and fibonacci; provided in random order
@@ -11,13 +11,13 @@ Terminal-based Python game where players try to guess a secret number within 10 
 - Quit Option: Players can exit anytime by typing q
 - Leaderboard: Stores and displays top 5 scores with username, attempts, number guessed, and difficulty
 
-# Installation
+# Game Set Up
 1. Make sure you have Python 3 installed
 2. Clone the repository: git clone https://github.com/kevinpedregosa/Number-Guessing-Game.git
 3. Navigate to the project folder: cd Number-Guessing-Game
 4. Run the game: python number_guessing_game.py
 
-# Example Gameplay
+# Gameplay Example
 NUMBER GUESSING GAME
 
 Choose difficulty (easy / medium / hard): easy
