@@ -4,11 +4,11 @@
 Terminal-based Python game where players try to guess a secret number within 10 attempts.
 
 # Features 
-• Difficulty Levels: Easy, Medium, and Hard with 10 attempts each
-• Smart Hints: Provided in random order, including even/odd, divisible by 5, prime, and Fibonacci
-• Hot/Cold Feedback: Shows if guess is getting closer or farther
-• Leaderboard: Stores top 5 scores with username, attempts, number guessed, and difficulty
-• Quit Option: Players can exit anytime by typing q
+- Difficulty Levels: Easy, Medium, and Hard with 10 attempts each
+- Smart Hints: Provided in random order, including even/odd, divisible by 5, prime, and Fibonacci
+- Hot/Cold Feedback: Shows if guess is getting closer or farther
+- Leaderboard: Stores top 5 scores with username, attempts, number guessed, and difficulty
+- Quit Option: Players can exit anytime by typing q
 
 # Installation
 1. Make sure you have Python 3 installed
