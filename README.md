@@ -62,6 +62,6 @@ username: bob; attempts: 4; difficulty: easy; number: 91
 username: rai; attempts: 6; difficulty: hard; number: 3
 
 # What I learned
-- Developed an interactive game using Python functions and loops to implement smart hints, hot/cold feedback, and attempt tracking
+- Developed an interactive game utilizing Python functions and loops to add hot/cold feedback, useful hints, and attempt tracking
 - Built a top-5 leaderboard system with Python file handling to store, sort, and display player scores
-- Managed code versions through Git and GitHub, using branching and merging to maintain project
+- Managed project versions through Git and GitHub, using branching and merging to maintain code
