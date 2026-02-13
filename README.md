@@ -17,28 +17,39 @@ Terminal-based Python game where players try to guess a secret number within 10 
 4. Run the game: python number_guessing_game.py
 
 # Example Gameplay
-NUMBER GUESSING GAME\n
-Enter your username: Alex\n
+NUMBER GUESSING GAME
 
-I am thinking of a number between 1 and 100.\n
-You have 10 attempts.\n
+Enter your username: Alex
 
-Enter your guess (or 'q' to quit): 12\n
-Far. Getting warmer.\n
-Hint: The number is even.\n
-You have 9 left.\n
+I am thinking of a number between 1 and 100.
 
-Enter your guess (or 'q' to quit): 56\n
-Close. Getting warmer.\n
-You have 8 left.\n
+You have 10 attempts.
+
+Enter your guess (or 'q' to quit): 12
+
+Far. Getting warmer.
+
+Hint: The number is even.
+
+You have 9 left.
+
+Enter your guess (or 'q' to quit): 56
+
+Close. Getting warmer.
+
+You have 8 left.
+
 
 ...
 
-Correct, Alex! You guessed the number in 5 attempts.\n
-Performance: Excellent\n
+Correct, Alex! You guessed the number in 5 attempts.
 
-LEADERBOARD (Top 5)\n
-1. username: Alex; attempts: 5; difficulty: easy; number: 42\n
+Performance: Excellent
+
+
+LEADERBOARD (Top 5)
+
+1. username: Alex; attempts: 5; difficulty: easy; number: 42
 
 # What I learned
 - Developed an interactive game using Python functions and loops to implement smart hints, hot/cold feedback, and attempt tracking
