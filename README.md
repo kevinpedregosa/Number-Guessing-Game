@@ -13,7 +13,7 @@ Terminal-based Python game where players try to guess a secret number within 10 
 # Installation
 1. Make sure you have Python 3 installed
 2. Clone the repository: git clone https://github.com/kevinpedregosa/Number-Guessing-Game.git
-3. Navigate to the project folder: cd number-guessing-game
+3. Navigate to the project folder: cd Number-Guessing-Game
 4. Run the game: python number_guessing_game.py
 
 # Example Gameplay
