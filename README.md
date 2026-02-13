@@ -18,6 +18,7 @@ Terminal-based Python game where players try to guess a secret number within 10 
 
 # Example Gameplay
 NUMBER GUESSING GAME
+
 Choose difficulty (easy / medium / hard): easy
 
 I am thinking of a number between 1 and 100.
