@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1>Number Guessing Game</h1>
+        <p class="subtitle">
+          Guess the secret number between 1 and 100. You have 10 attempts and smart hints along the way.
+        </p>
+      </header>
+
+      <main class="content">
+        <section class="card" id="setup-card">
+          <h2>Start a New Game</h2>
+          <form id="start-form">
+            <div class="field">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter your name"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="field">
+              <label>Difficulty</label>
+              <div class="difficulty-options">
+                <label class="chip">
+                  <input type="radio" name="difficulty" value="easy" checked />
+                  <span>Easy</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="difficulty" value="medium" />
+                  <span>Medium</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="difficulty" value="hard" />
+                  <span>Hard</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn primary">Start Game</button>
+          </form>
+        </section>
+
+        <section class="card" id="game-card" aria-hidden="true">
+          <h2>Make a Guess</h2>
+
+          <div class="status-row">
+            <div>
+              <span class="label">Player:</span>
+              <span id="status-username" class="value"></span>
+            </div>
+            <div>
+              <span class="label">Difficulty:</span>
+              <span id="status-difficulty" class="value"></span>
+            </div>
+            <div>
+              <span class="label">Attempts Left:</span>
+              <span id="status-attempts" class="value"></span>
+            </div>
+          </div>
+
+          <form id="guess-form">
+            <div class="field inline">
+              <label for="guess">Your guess (1–100)</label>
+              <input
+                type="number"
+                id="guess"
+                name="guess"
+                min="1"
+                max="100"
+                required
+              />
+              <button type="submit" class="btn primary">Submit Guess</button>
+            </div>
+          </form>
+
+          <div id="messages" class="messages" aria-live="polite"></div>
+
+          <div id="game-actions" class="game-actions">
+            <button id="play-again-btn" class="btn secondary" hidden>
+              Play Again
+            </button>
+          </div>
+        </section>
+
+        <section class="card" id="leaderboard-card">
+          <h2>Leaderboard (Top 5)</h2>
+          <p class="leaderboard-hint">
+            Scores are ranked by the fewest attempts taken to guess correctly.
+          </p>
+          <div id="leaderboard-empty" class="leaderboard-empty">
+            No scores yet. Be the first to win!
+          </div>
+          <table id="leaderboard-table" class="leaderboard-table" hidden>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Attempts</th>
+                <th>Difficulty</th>
+                <th>Number</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body"></tbody>
+          </table>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Built with Flask &amp; Vanilla JS</span>
+      </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+  </html>
+
