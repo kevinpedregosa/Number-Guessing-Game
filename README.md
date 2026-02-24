@@ -86,7 +86,7 @@ A number guessing game with both:
 Once deployed, the web version will be available at a public URL.  
 Update this section with your live link, for example:
 
-- **Live site**: `[Play the web version here](https://your-deployed-url.example.com)`
+- **Live site**: `[Play the web version here](https://kevins-number-guessing-game.onrender.com)`
 
 You can get a URL like this by:
 - Hosting the app on a platform that supports Python/Flask (for example Render, Railway, Fly.io, or Heroku‑style platforms that use the `Procfile`).
