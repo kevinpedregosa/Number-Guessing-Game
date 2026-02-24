@@ -15,6 +15,72 @@ A number guessing game with both:
 
 ---
 
+## Documentation
+
+### High‑Level Architecture
+
+- **Core game engine**: Implemented in `number_guessing_game.py` and reused by both the terminal and web versions (hint logic, distance calculations, leaderboard handling).
+- **Web backend**: `app.py` exposes HTTP JSON APIs for starting a game, submitting guesses, and fetching the leaderboard, and renders the main HTML page.
+- **Web frontend**: `templates/index.html`, `static/app.js`, and `static/style.css` provide the browser UI and communicate with the Flask backend.
+- **Persistence**: Scores are stored in a simple text file `leaderboard.txt`, shared between the CLI and web versions.
+
+### Languages & Technologies Used
+
+- **Python 3**
+  - Main programming language for the project.
+  - Implements game logic (difficulty, hints, hot/cold feedback) and leaderboard management.
+- **Flask**
+  - Lightweight Python web framework used to build the backend.
+  - Renders the main HTML page and provides REST‑style endpoints:
+    - `GET /api/leaderboard` to read scores.
+    - `POST /api/start-game` to start a new game and initialize session state.
+    - `POST /api/guess` to submit guesses and return feedback.
+- **Flask Sessions**
+  - Used to store per‑user game state on the server (secret number, attempts used, difficulty, hints already given).
+  - Allows the game to keep track of progress across multiple HTTP requests from the same browser.
+- **HTML**
+  - Used in `templates/index.html` to structure the web page (header, setup form, game area, leaderboard table).
+  - Integrates with Flask using Jinja templating (`{{ url_for(...) }}`) to link static assets.
+- **CSS**
+  - Defined in `static/style.css` to provide layout, responsive design, and a modern look (cards, buttons, message styles, leaderboard table).
+  - Uses CSS grid for layout and media queries for mobile responsiveness.
+- **JavaScript (Vanilla JS)**
+  - Located in `static/app.js`.
+  - Handles UI interactions: starting a game, submitting guesses, updating messages, and toggling “Play Again”.
+  - Uses the Fetch API to call the Flask endpoints, parses JSON responses, and updates DOM elements (status bar, messages, leaderboard).
+- **Gunicorn**
+  - Production WSGI HTTP server specified in `Procfile` as `gunicorn app:app`.
+  - Used by hosting platforms to serve the Flask app in a more robust way than the development server.
+- **Text file storage**
+  - `leaderboard.txt` stores results in a human‑readable format.
+  - Shared between the terminal and web versions so both can show and update the same top 5 scores.
+
+### How the Game Works
+
+- **Terminal Version**
+  - Entry point: running `python number_guessing_game.py`.
+  - Prompts the player for a username and difficulty.
+  - On each attempt, reads input from the terminal, validates it, and:
+    - Computes a distance‑based hint (`Very close`, `Close`, `Far`, `Very far`).
+    - Provides “Getting warmer/colder” feedback compared to the previous guess.
+    - Optionally gives one of four smart hints based on the secret number’s properties.
+  - When the game ends (win or attempts exhausted), updates `leaderboard.txt` and prints the leaderboard.
+
+- **Web Version**
+  - Entry point: running `python app.py` (development) or `gunicorn app:app` (production).
+  - A user opens the browser page, fills in username and difficulty, and the frontend calls `POST /api/start-game`.
+  - Flask:
+    - Generates a secret number and hint schedule.
+    - Stores all game state in the session.
+    - Returns basic game info and current leaderboard as JSON.
+  - For each guess:
+    - The frontend sends `POST /api/guess` with the guess number.
+    - The backend validates the guess, updates attempt count and session game state, calculates hints, and checks win/lose conditions.
+    - The response includes feedback text, attempts left, any smart hint, and (on game over) performance summary and updated leaderboard.
+  - The frontend updates the on‑screen messages, status bar (attempts left, difficulty, username), and the leaderboard table accordingly.
+
+---
+
 ## Play Online
 
 Once deployed, the web version will be available at a public URL.  
